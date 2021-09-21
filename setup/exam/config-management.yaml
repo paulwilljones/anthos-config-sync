@@ -1,0 +1,13 @@
+apiVersion: configmanagement.gke.io/v1
+kind: ConfigManagement
+metadata:
+  name: config-management
+  namespace: config-management-system
+spec:
+  clusterName: exam
+  git:
+    syncRepo: git@github.com:paulwilljones/anthos-config-sync.git
+    syncBranch: master
+    secretType: ssh
+    policyDir: "config-root"
+
